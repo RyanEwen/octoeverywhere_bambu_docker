@@ -1,4 +1,4 @@
-## Dockerized Octoeverywhere for Bambu
+## Dockerized OctoEverywhere for Bambu
 
 ### How it works:
 The setup script will create a Docker image and container for each of your printers. The containers can then be started/stoped using Docker-Compose.
@@ -8,7 +8,7 @@ The setup script will create a Docker image and container for each of your print
 
     Note: The name will be used as the Docker image name as well as the Docker-Compose service name.
 
-    You will be asked for your printer's Access Code, Serial, and IP address. Avoid spaces in the name - you can set a pretty name later on the Octoeverywhere dashboard.
+    You will be asked for your printer's Access Code, Serial, and IP address. Avoid spaces in the name - you can set a pretty name later on the OctoEverywhere dashboard.
 
 1. Repeat the previous step for each of your other printers.
 
