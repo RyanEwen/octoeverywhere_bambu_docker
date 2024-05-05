@@ -6,9 +6,11 @@ The setup script will create a Docker image and container for each of your print
 1. Setup a printer using `./setup_printer.sh <name>`
     For example: `./setup_printer.sh fred`
 
-    Note: The name will be used as the Docker image name as well as the Docker-Compose service name.
+    *Note: The name will be used as the Docker image name as well as the Docker-Compose service name.*
 
     You will be asked for your printer's Access Code, Serial, and IP address. Avoid spaces in the name - you can set a pretty name later on the OctoEverywhere dashboard.
+
+    **Ignore the "Installer failed" error - that is expected**
 
 1. Repeat the previous step for each of your other printers.
 
