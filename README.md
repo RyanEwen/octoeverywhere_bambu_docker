@@ -1,7 +1,7 @@
 ## Dockerized OctoEverywhere for Bambu
 
 ### How it works:
-The setup script will create a Docker image and container for each of your printers. The containers can then be started/stoped using Docker-Compose.
+The setup script will create a Docker image and container for each of your printers. The containers can then be started/stopped using Docker-Compose.
 
 1. Setup a printer using `./setup_printer.sh <name>`
     For example: `./setup_printer.sh fred`
@@ -16,9 +16,10 @@ The setup script will create a Docker image and container for each of your print
 
 1. Start all of the containers using `docker-compose up -d`
 
-1. Check the logs of each container for the setup URLs by using `docker-compose logs`.
+1. Check the logs of each container for the OctoEverywhere setup URLs by using `docker-compose logs`.
 
     The URLs will be within WARNING blocks. Look for "Use the following link to finish the setup and get remote access:".
 
 1. `CTRL-C` to get out of the log view, and you're done!
-    You can stop all containers using `docker-compose stop`. Substitute `stop` for `restart` or `start` as-needed.
+    If needed, you can stop all of the containers using `docker-compose stop`. Substitute `stop` for `restart` or `start` as-needed.
+

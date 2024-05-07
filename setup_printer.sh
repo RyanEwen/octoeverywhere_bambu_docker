@@ -3,11 +3,11 @@
 echo "Building base image"
 docker build -t bambu_octoeverywhere .
 
-echo "Installing Octoeverywhere"
+echo "Installing OctoEverywhere"
 docker rm bambu_octoeverywhere_tmp
 docker run -it --name bambu_octoeverywhere_tmp bambu_octoeverywhere
 
-echo "Creating Octoeverywhere image for $1"
+echo "Creating OctoEverywhere image for $1"
 docker commit --change='CMD ["bash", "/root/start.sh"]' bambu_octoeverywhere_tmp $1
 docker rm bambu_octoeverywhere_tmp
 
