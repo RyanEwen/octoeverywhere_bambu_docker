@@ -1,3 +1,9 @@
 version: '2.2'
 
 services:
+  example_printer:
+    build: ./
+    environment:
+      - IP_ADDRESS=192.168.0.1
+      - ACCESS_CODE=12345678
+      - SERIAL_NUMBER=000000000000000

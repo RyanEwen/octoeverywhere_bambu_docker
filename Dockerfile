@@ -1,9 +1,19 @@
-FROM ubuntu:latest
+FROM debian:12
 WORKDIR /root
-RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y curl git ffmpeg python3 python3-pip virtualenv python3-venv sudo tzdata
-RUN git clone https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere octoeverywhere
-COPY ./scripts/ /scripts/
+
 ENV USER=root
+ENV REPO_DIR=/root/octoeverywhere
+ENV VENV_DIR=/root/octoeverywhere-env
+
+RUN apt update
+RUN apt install -y curl git ffmpeg jq python3 python3-pip python3-venv virtualenv
+RUN git clone https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere ${REPO_DIR}
+RUN virtualenv -p /usr/bin/python3 ${VENV_DIR}
+RUN ${VENV_DIR}/bin/python -m pip install --upgrade pip
+RUN ${VENV_DIR}/bin/pip3 install --require-virtualenv --no-cache-dir -q -r ${REPO_DIR}/requirements.txt
+
+COPY ./scripts/entrypoint.sh /entrypoint.sh
+
 WORKDIR /root/octoeverywhere
-CMD ["bash", "/scripts/container_setup.sh"]
+
+CMD ["/bin/bash", "/entrypoint.sh"]
