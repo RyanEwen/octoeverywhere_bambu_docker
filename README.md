@@ -25,7 +25,7 @@
     docker-compose up -d
     ```
 
-1. Connect the OctoEverywhere services to your OctoEverywhere account by visiting the links in the logs.
+1. Connect your OctoEverywhere services to your OctoEverywhere account by visiting the links in the logs.
     ```bash
     docker-compose logs | grep https://octoeverywhere.com/getstarted
     ```
