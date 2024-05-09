@@ -2,6 +2,7 @@ version: '2.2'
 
 services:
   example_printer:
+    image: technicallyreal/octoeverywhere_bambu
     build: ./
     environment:
       - IP_ADDRESS=192.168.0.1

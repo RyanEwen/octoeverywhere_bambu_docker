@@ -5,12 +5,14 @@
 1. Edit `docker-compose.yml` by replacing the example service with a service for each of your printers. Eg:
     ```yaml
     my_printer_1:
+        image: technicallyreal/octoeverywhere_bambu
         build: ./
         environment:
         - IP_ADDRESS=192.168.0.10
         - ACCESS_CODE=12345678
         - SERIAL_NUMBER=101010101010101
     my_printer_2:
+        image: technicallyreal/octoeverywhere_bambu
         build: ./
         environment:
         - IP_ADDRESS=192.168.0.11
