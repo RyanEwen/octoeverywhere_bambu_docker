@@ -1,8 +1,8 @@
-## Dockerized OctoEverywhere for Bambu
+## Dockerized OctoEverywhere for Bambu Printers
 
 ### Getting Started
 
-1. Edit `docker-compose.yml` by replacing the example service with a service for each of your printers. Eg:
+1. Open `docker-compose.yml` and replace the example service with your own (one for each of your printers). Eg:
     ```yaml
     my_printer_1:
         image: technicallyreal/octoeverywhere_bambu
@@ -20,12 +20,13 @@
         - SERIAL_NUMBER=202020202020202
     ```
 
-1. Start all of the containers using `docker-compose up -d`
+1. Start your OctoEverywhere services:
+    ```bash
+    docker-compose up -d
+    ```
 
-1. Check the logs of each container for the OctoEverywhere setup URLs by using `docker-compose logs`.
-
-    The URLs will be within WARNING blocks. Look for "Use the following link to finish the setup and get remote access:".
-
-1. `CTRL-C` to get out of the log view, and you're done!
-    If needed, you can stop all of the containers using `docker-compose stop`. Substitute `stop` for `restart` or `start` as-needed.
-
+1. Connect the OctoEverywhere services to your OctoEverywhere account by visiting the links in the logs.
+    ```bash
+    docker-compose logs | grep https://octoeverywhere.com/getstarted
+    ```
+    It may take a few moments before the services are ready and the links created. If you don't see a link for each service, simply wait a moment and run the command again. Alternatively, run `docker-compose logs -f` to watch the logs in real time.
