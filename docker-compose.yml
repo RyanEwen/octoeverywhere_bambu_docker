@@ -1,5 +1,4 @@
 version: '2.2'
-
 services:
   example_printer:
     image: technicallyreal/octoeverywhere_bambu
