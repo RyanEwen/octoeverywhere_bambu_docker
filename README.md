@@ -1,5 +1,9 @@
 ## Dockerized OctoEverywhere for Bambu Printers
 
+### !!! IMPORTANT UPDATE !!!
+OctoEverywhere now officially supports Docker itself. Please use that instead of this project.  
+https://blog.octoeverywhere.com/setup-bambu-connect-with-docker-or-docker-compose/
+
 ### Getting Started
 
 1. Create a `docker-compose.yml` file following this example:
